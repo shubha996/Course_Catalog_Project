@@ -6,7 +6,7 @@ module.exports = (mongoose) => {
                 userId: {type: String, required: true},
                 courseId: {type: String, required: true},
             },
-            { timeStamps: true}
+            { timestamps: true}
         )
     );
     return Enrollment;

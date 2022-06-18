@@ -9,7 +9,7 @@ module.exports = (mongoose) => {
                 password: {type: String, required: true},
                 role: {type: String, default: "user"}
             },
-            { timeStamps: true}
+            { timestamps: true}
         )
     );
     return User;

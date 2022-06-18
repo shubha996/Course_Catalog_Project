@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 });
 
 require('./routes/tutorial.routes')(app);
+require("./routes/user.router")(app);
 
 app.listen(PORT, () => {
     console.log(`Connection Established on PORT ${PORT}`);

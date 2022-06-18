@@ -1,32 +1,36 @@
 module.exports = app => {
+    const tutorials = require("../controllers/tutorial.controller");
     var router = require("express").Router();
 
     // Create a new Course
-    router.post('/add', (req, res) => {
-        console.log("Test Add Course");
-        res.send("Hello")
-    });
+    router.post('/add', tutorials.create);
 
     // Retriving all the Courses
     router.get('/', () => {});
 
     // Retrive all categories
-    router.get('/categories', () => {});
+    router.get('/categories', tutorials.findAllCategories);
+
+    // Retrive all Courses by Category
+    router.get('/categories/:categoryName', tutorials.getCourseByCategory);
 
     // Retrive all the published courses
-    router.get('/published', () => {});
+    router.get('/published', tutorials.getAllPublishedCourses);
+
+    // Retrive all the unpublished courses
+    router.get('/unpublished', tutorials.getAllUnpublishedCourses);
 
     // Retrive Course by ID
-    router.get('/:id', () => {});
+    router.get('/:id', tutorials.findOneCourse);
 
     // Update a Course
     router.put('/:id', () => {});
 
     // Delete a Course by ID
-    router.delete('/:id', () => {});
+    router.delete('/delete/:id', tutorials.deleteCourseById);
 
     // Delete all Courses
-    router.delete('/', () => {});
+    router.delete('/deleteall', tutorials.deleteAllCourses);
 
 
 

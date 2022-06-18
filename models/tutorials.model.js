@@ -17,7 +17,7 @@ module.exports = (mongoose) => {
                 duration: {type: Number, default: 60, min: 0, max: 1200},
                 popularity: {type: Number, default: 4.0}
             },
-            { timeStamps: true } 
+            { timestamps: true } 
         )
     );
     return Tutorial;
